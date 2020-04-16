@@ -1,0 +1,54 @@
+<ion-header padding>
+  <!-- header -->
+  <ion-item centered>
+    <ion-title>
+      <h1>Welcome to SquadUp!</h1>
+      <h3>This is where you will be able to see events listed</h3>
+      <h3>Take a look at the events and join one</h3>
+    </ion-title>
+  </ion-item>
+</ion-header>
+
+<ion-content fullscreen>
+  <!-- Event List -->
+    <ion-list fixed>
+      <ion-list-header fixed>Events</ion-list-header>
+      <ion-item-sliding *ngFor="let event of events">
+        <button (click)="showEventDetailAlert(event)" ion-item>
+          <ion-card>
+            <ion-card-header>
+              
+              <ion-card-title>{{event.eventName}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{event.description}}
+            </ion-card-content>
+          </ion-card>
+          </button>
+        <ion-item-options>
+          <button (click)="joinEventAlert(event)" ion-button color="positive">
+            <ion-icon name="people-outline"></ion-icon>
+            Join
+            </button>
+            </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+
+  <!-- Joined Events
+    <ion-list>
+      <ion-list-header>Joined Events</ion-list-header>
+      <ion-item-sliding *ngFor="let event of events">
+        <ion-item>
+          <ion-label>
+          </ion-label>
+          </ion-item>
+        <ion-item-options>
+          <button (click)="leaveEventAlert(event)" ion-button color="danger">
+            <ion-icon name="walk-outline"></ion-icon>
+            Leave
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+    -->
+</ion-content>
